@@ -1,0 +1,61 @@
+{
+  "locales": ["EN", "ES"],
+  "defaultLocale": "EN",
+
+  "ui": {
+    "ok": ["Accept", "Aceptar"],
+    "login": ["Login", "Iniciar Sesión"],
+    "logout": ["Logout", "Cerrar Sesión"]
+  },
+
+  "menu": {
+    "pages": {
+      "aboutMe": ["About me", "Acerca de mi"],
+      "experience": ["Experience", "Experiencia"],
+      "projects": ["Projects", "Proyectos"],
+      "openSource": ["Open Source", "Open Source"],
+      "freelance": ["Cards", "Tarjetas"],
+      "skills": ["Skills", "Habilidades"]
+    }
+  },
+
+  "experience": {
+    "currently": ["Actuality", "Actualidad"],
+    "ICO": ["Computer Engineering", "Ingeniero en Computación"],
+    "aa": [
+      "Web application development with AWS and GCP",
+      "Desarrollo de aplicaciones web con AWS y GCP"
+    ],
+    "a": [
+      "Support and maintenance of web applications in AWS with the following products: AWS Organizations, EC2, S3, IAM, Cognito, RDS, DynamoDB and API Gateway/Lambda with Serverless.\n",
+      "Soporte y mantenimiento de los aplicativos web en AWS con los siguientes productos : AWS Organizations, EC2, S3, IAM, Cognito, RDS, DynamoDB y API Gateway/Lambda con Serverless.\n"
+    ],
+    "b": [
+      "Microservices Development: Java/Spring Boot, OAuth, JWT, Nginx. Web apps: React, Sass. SVN to Git migration plan is offered with GitLab.\n",
+      "Desarrollo de Microservices: Java/Spring Boot, OAuth, JWT, Nginx. Web apps: React, Sass. Se ofrece plan de migración de SVN a Git con GitLab.\n"
+    ],
+    "d": [
+      "Development of web/batch applications with Java/Spring technology. Administration of RedHat, Solaris and CentOS servers. Install new SAP modules on AIX and RedHat servers.\n",
+      "Desarrollo de aplicaciones web/batch con tecnología Java/Spring. Administración de servidores RedHat, Solaris y CentOS. Instalar nuevos módulos de SAP en servidores de AIX y RedHat.\n"
+    ],
+    "e": [
+      "Development of mobile applications with J2ME/LWUIT, MySQL, RESTful Services with Java in Glassfish and JWT. Web Apps with AngularJS, JQuery, Bootstrap/Sass and use of Git with GitLab.\n",
+      "Desarrollo de aplicaciones móviles con J2ME/LWUIT, MySQL, Servicios RESTful con Java en Glassfish y JWT. Web Apps con AngularJS, JQuery, Bootstrap/Sass y uso de Git con GitLab.\n"
+    ],
+    "f": [
+      "I studied at the Facultad de Estudios Superiores Aragón UNAM",
+      "Egresado de la Facultad de Estudios Superiores Aragón UNAM\n"
+    ]
+  },
+
+  "projects": {
+    "nextia": ["Create fast web applications", "Crea aplicaciones web rápidas"]
+  },
+
+  "freelance": {
+    "mvp": ["Minimum Viable Product", "Producto Mínimo Viable"],
+    "newFeature": ["New Feature", "Nueva caracteristica"],
+    "npd": ["New Product Development", "Desarrollo de un nuevo producto"],
+    "supportMaintenance": ["Support and Maintenance", "Soporte y Mantenimiento"]
+  }
+}

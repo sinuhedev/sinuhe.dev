@@ -1,0 +1,95 @@
+.Background {
+  .worldCrystals {
+    z-index: -1;
+    position: fixed;
+    top: 20%;
+    width: 100%;
+    height: 100%;
+
+    .crystal_02 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("assets/img/crystal/world_crystal_01.webp") repeat-x;
+      animation: bg-crystal004 60s infinite;
+      animation-timing-function: linear;
+    }
+
+    .crystal_03 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 50%;
+      margin-left: -180px;
+      background: url("assets/img/crystal/world_crystal_02.webp") repeat-x;
+      animation: bg-crystal005 90s infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .crystals {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .crystal_01 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("assets/img/crystal/crystal_01.webp") repeat-y;
+      animation: bg-crystal001 30s infinite;
+      animation-timing-function: linear;
+    }
+
+    .crystal_02 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("assets/img/crystal/crystal_02.webp") repeat-y;
+      animation: bg-crystal002 60s infinite;
+      animation-timing-function: linear;
+    }
+
+    .crystal_03 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("assets/img/crystal/crystal_03.webp") repeat-y;
+      animation: bg-crystal003 90s infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+@keyframes bg-crystal004 {
+  100% {
+    background-position: 1198px 0px;
+  }
+}
+
+@keyframes bg-crystal005 {
+  100% {
+    background-position: 1086px 0px;
+  }
+}
+
+@keyframes bg-crystal001 {
+  100% {
+    background-position: 0px 900px;
+  }
+}
+
+@keyframes bg-crystal002 {
+  100% {
+    background-position: 0px 900px;
+  }
+}
+
+@keyframes bg-crystal003 {
+  100% {
+    background-position: 0px -1200px;
+  }
+}

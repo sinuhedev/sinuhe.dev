@@ -1,0 +1,12 @@
+.UiSelect {
+  button,
+  li {
+    cursor: pointer;
+  }
+
+  button,
+  ul {
+    width: 50px;
+    height: 40px;
+  }
+}

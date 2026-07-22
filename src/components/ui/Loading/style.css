@@ -1,0 +1,10 @@
+.UiLoading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: color-mix(in srgb, black, transparent 25%);
+
+  z-index: var(--z-index-loading);
+}

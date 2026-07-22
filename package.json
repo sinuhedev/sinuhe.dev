@@ -1,0 +1,23 @@
+{
+  "name": "sinuhe.dev",
+  "description": "sinuhe.dev",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite --mode dev",
+    "build": "vite build --mode"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "vite": "8.1.5",
+    "tailwindcss": "4.3.3"
+  },
+  "dependencies": {
+    "nextia": "10.0.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "three": "0.185.1"
+  }
+}

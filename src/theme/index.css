@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@import "./icons/_index.css";
+@import "./utils/fonts.css";
+@import "./utils/scrollbar.css";
+@import "./utils/view-transition.css";
+
+/**
+ * theme
+ */
+
+@layer theme, base, components, utilities;
+
+@theme {
+  --font-sans: "Oswald";
+  --primary: #17344b;
+  --secondary: #1c1c1c;
+  --body-bg: black;
+  --body-color: #a8a8a8;
+  --border-color: color-mix(in srgb, #8d8d93, transparent 75%);
+  --muted-color: color-mix(in srgb, var(--body-color), transparent 30%);
+  --z-index-loading: 101;
+  --z-index-menu: 100;
+}
+
+@layer base {
+  body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+  }
+
+  h3 {
+    font-size: var(--text-xl);
+  }
+
+  h4 {
+    font-size: var(--text-lg);
+  }
+
+  h5 {
+    font-size: var(--text-lg);
+    color: var(--muted-color);
+  }
+
+  h6 {
+    font-size: var(--text-lg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+  }
+
+  .mute-version {
+    color: color-mix(in srgb, var(--muted-color), transparent 20%);
+  }
+}

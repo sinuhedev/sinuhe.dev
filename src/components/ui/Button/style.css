@@ -1,0 +1,13 @@
+.UiButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 16px;
+  padding: 4px;
+
+  &:hover {
+    color: color-mix(in srgb, var(--body-color), transparent 30%);
+  }
+}

@@ -1,0 +1,168 @@
+.PortalText {
+  --portal-diameter: 130px;
+  --text-padding: 40px;
+  --materialization-duration: 2.6s;
+  --slide-duration: 1.5s;
+  --string: attr(value);
+  --string-font-size: 6rem;
+  --flicker-duration: 1s;
+  --portal-color: rgba(var(--primary), 0.5);
+  --portal-faint-side: rgba(var(--primary), 0.1);
+  --portal-bold-side: rgba(var(--primary), 1);
+  --final-portal-width: 13px;
+
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  &:before,
+  &:after {
+    animation-fill-mode: forwards;
+    display: block;
+  }
+
+  &:before {
+    content: attr(value);
+    position: relative;
+    z-index: 1;
+    padding: 0 0 0 calc(var(--text-padding) - var(--final-portal-width));
+    transform: translate(calc(-100% - var(--text-padding)));
+    font-size: var(--string-font-size);
+    color: #8d8d93;
+    opacity: 0.5;
+    text-shadow: 0px 0px 5px #8d8d93;
+    white-space: nowrap;
+    animation-name: slide-in, flicker;
+    animation-duration: var(--slide-duration), var(--flicker-duration);
+    animation-timing-function: ease-out, linear;
+    animation-delay:
+      var(--materialization-duration),
+      calc(var(--materialization-duration) + var(--slide-duration));
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    background-color: var(--portal-color);
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0 0 #17344b66;
+    transform: translate3d(-50%, -50%, 0);
+    border-width: 0px;
+    border-style: dotted;
+    border-radius: 100%;
+    border-left-color: var(--portal-faint-side);
+    border-right-color: var(--portal-faint-side);
+    border-top-color: var(--portal-bold-side);
+    border-bottom-color: var(--portal-bold-side);
+    animation-duration: var(--materialization-duration);
+    animation-name: materialization;
+  }
+
+  @media (max-width: 575.98px) {
+    --text-padding: 20px;
+    --string-font-size: 4rem;
+    --portal-diameter: 50px;
+    --final-portal-width: 7px;
+  }
+}
+
+@keyframes materialization {
+  0% {
+    width: 0;
+    height: 0;
+    border-width: 0px;
+    left: 50%;
+    border-left-color: var(--portal-faint-side);
+    border-right-color: var(--portal-faint-side);
+    border-top-color: var(--portal-bold-side);
+    border-bottom-color: var(--portal-bold-side);
+    transform: translate3d(-50%, -50%, 0);
+    box-shadow: 0 0 #17344b66;
+  }
+
+  50% {
+    width: var(--portal-diameter);
+    height: var(--portal-diameter);
+    border-width: 4px;
+    border-left-color: var(--portal-faint-side);
+    border-right-color: var(--portal-faint-side);
+    border-top-color: var(--portal-bold-side);
+    border-bottom-color: var(--portal-bold-side);
+    box-shadow: 0 0 var(--final-portal-width) var(--final-portal-width) #17344b;
+  }
+
+  70% {
+    width: var(--portal-diameter);
+    height: var(--portal-diameter);
+    border-width: 2px;
+    border-color: #17344bb3;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(900deg);
+  }
+
+  to {
+    width: var(--final-portal-width);
+    height: var(--portal-diameter);
+    border-width: 2px;
+    border-color: #17344bb3;
+    left: 0;
+    transform: translate3d(0, -50%, 0) rotate(900deg);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translate(calc(-100% - var(--text-padding)));
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5;
+    text-shadow: 0px 0px 5px #8d8d93;
+  }
+
+  10% {
+    opacity: 0.5;
+    text-shadow: 0px 0px 5px #8d8d93;
+  }
+
+  20% {
+    opacity: 0.4;
+    text-shadow: 0px 0px 4px #8d8d93;
+  }
+
+  30% {
+    opacity: 0.8;
+    text-shadow: 0px 0px 8px #8d8d93;
+  }
+
+  40% {
+    opacity: 0.4;
+    text-shadow: 0px 0px 4px #8d8d93;
+  }
+
+  50% {
+    opacity: 1;
+    text-shadow: 0px 0px 10px #8d8d93;
+  }
+
+  90% {
+    opacity: 0.2;
+    text-shadow: 0px 0px 2px #8d8d93;
+  }
+
+  to {
+    opacity: 1;
+    text-shadow: 0px 0px 10px #8d8d93;
+  }
+}

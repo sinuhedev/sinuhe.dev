@@ -1,0 +1,50 @@
+.Menu {
+  z-index: var(--z-index-menu);
+
+  li {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: transparent;
+
+    &.active {
+      border-color: var(--primary);
+      background-color: color-mix(in srgb, var(--primary), transparent 70%);
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  .lock {
+    position: absolute;
+    background-color: color-mix(in srgb, black, transparent 40%);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  section {
+    transition: width 0.2s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    ul {
+      white-space: nowrap;
+    }
+
+    &.menu-sm {
+      background-color: color-mix(in srgb, black, transparent 20%);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      ul {
+        padding-top: 50px;
+      }
+    }
+  }
+}
