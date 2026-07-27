@@ -60,5 +60,5 @@ jobs:
         run: |
           curl \
             -H "Content-Type: application/json" \
-            -d '{"username":"github","content":"https://portalfx.dev"}' \
+            -d '{"username":"github","content":"https://sinuhe.dev"}' \
             "https://discord.com/api/webhooks/${DISCORD_TOKEN}"
