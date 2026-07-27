@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         env:
-          PUBLIC_TITLE: Sinuhe Dev.
+          PUBLIC_TITLE: Sinuhe Maceda
         run: npm run build prod
         # run: npm run build -- --base=/sinuhe.dev
 
