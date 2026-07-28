@@ -14,7 +14,7 @@ export default function Nextia({ className, style }) {
       <div className="text-center mt-3 ">
         <div>
           <Link
-            href="https://github.com/sinuhedev/nextia"
+            href="https://nextia.dev"
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center gap-2"
