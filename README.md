@@ -1,6 +1,7 @@
 # page
 
 ## To start
+
 Open http://localhost:3000 to view it in the browser.
 
 ```sh
@@ -9,6 +10,7 @@ node --run dev
 ```
 
 ## env
+
 ```.env
 .env        # loaded in all cases
 .env.[mode] # only loaded in specified mode [ dev, test, beta, prod ]
@@ -25,3 +27,8 @@ PUBLIC_TITLE=localhost
 
 ```
 
+## biome
+
+```sh
+ biome lint . --reporter=summary
+```
