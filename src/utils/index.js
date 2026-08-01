@@ -9,7 +9,7 @@ const env = Object.freeze({
   MENU_WIDTH: 200,
   HEADER_HEIGHT: 50,
   VIEW_TRANSITION_NAME: 'fade',
-  WINDOW_RESIZE: { md: 640, lg: 1024, xl: 1280 }
+  WINDOW_RESIZE: { md: 768, lg: 1024, xl: 1280 }
 })
 
 export { env, WebGLClass, WebGLMain }
