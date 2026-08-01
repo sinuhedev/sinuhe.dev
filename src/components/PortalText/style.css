@@ -63,7 +63,7 @@
     animation-name: materialization;
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 768px) {
     --text-padding: 20px;
     --string-font-size: 4rem;
     --portal-diameter: 50px;

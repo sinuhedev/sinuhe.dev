@@ -3,8 +3,8 @@
 
   user-select: none;
 
-  @media (max-width: 575.98px) {
-    --string-font-size: 4rem;
+  @media (max-width: 768px) {
+    --string-font-size: 60px;
   }
 
   .hero {

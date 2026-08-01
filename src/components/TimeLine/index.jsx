@@ -3,7 +3,7 @@ import './style.css'
 
 export default function Timeline({ name, className, style }) {
   return (
-    <article className={css('TimeLine ', className)} style={style} name={name}>
+    <article className={css('TimeLine', className)} style={style} name={name}>
       <ul className="timeline">
         <li className="timeline-inverted">
           <div className="timeline-badge">
