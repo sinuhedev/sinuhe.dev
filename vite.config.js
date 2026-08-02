@@ -31,6 +31,8 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: '../out',
       emptyOutDir: true,
+      // si son imagenes pequeñas no usar base64
+      assetsInlineLimit: 0,
       chunkSizeWarningLimit: 700,
 
       rollupOptions: {
