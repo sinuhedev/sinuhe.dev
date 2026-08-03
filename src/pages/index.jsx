@@ -45,8 +45,7 @@ export default function App() {
       value={{
         context: pages,
         icons,
-        i18n,
-        logger: env.DEV && env.PUBLIC_LOGGER === 'true'
+        i18n
       }}
     >
       <Header
