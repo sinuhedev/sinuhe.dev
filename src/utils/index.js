@@ -12,4 +12,12 @@ const env = Object.freeze({
   WINDOW_RESIZE: { md: 768, lg: 1024, xl: 1280 }
 })
 
-export { env, WebGLClass, WebGLMain }
+function fullscreen(element = document.documentElement) {
+  if (!document.fullscreenElement) {
+    return element.requestFullscreen()
+  } else {
+    return document.exitFullscreen()
+  }
+}
+
+export { env, fullscreen, WebGLClass, WebGLMain }
