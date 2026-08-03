@@ -4,7 +4,7 @@ export default function AboutPage() {
   const V = env.VERSION
 
   return (
-    <section className="mt-30 wide-screen:mt-0 flex flex-col items-center justify-center">
+    <section className="mt-30 flex flex-col items-center justify-center">
       <img src="logo.svg" className="w-48" alt="logo" />
       <h1>Sinuhe Maceda</h1>
       <br />

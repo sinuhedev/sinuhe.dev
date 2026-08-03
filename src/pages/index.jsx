@@ -3,7 +3,7 @@ import icons from 'assets/icons.svg?raw'
 import { Background, Header, Loading, Menu } from 'components'
 import { Pagex, useFx, usePage, useQueryString, useResize } from 'nextia'
 import { useEffect, useRef } from 'react'
-import { env } from 'utils'
+import { env, isMobile } from 'utils'
 import functions from './functions'
 
 export default function App() {
@@ -61,7 +61,7 @@ export default function App() {
         <Menu
           value={state.menu}
           width={state.menu.show ? env.MENU_WIDTH : 0}
-          mobile={resize.sm}
+          mobile={isMobile()}
           onClick={fx.changeMenu}
         />
 

@@ -28,8 +28,6 @@
   --breakpoint-xl: 1280px;
 }
 
-@custom-variant wide-screen (@media (max-height: 480px));
-
 @layer base {
   body {
     background-color: var(--body-bg);

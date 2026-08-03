@@ -1,6 +1,6 @@
 const getMenu = () => {
   const val = window.localStorage.getItem('menu')
-  if (val === undefined || val === 'true') return true
+  if (!val || val === 'true') return true
   return false
 }
 

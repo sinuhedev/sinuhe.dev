@@ -20,4 +20,12 @@ function fullscreen(element = document.documentElement) {
   }
 }
 
-export { env, fullscreen, WebGLClass, WebGLMain }
+function isMobile() {
+  const value = getComputedStyle(document.documentElement)
+    .getPropertyValue('--breakpoint-md')
+    .trim()
+
+  return window.matchMedia(`(max-width: ${value})`).matches
+}
+
+export { env, fullscreen, isMobile, WebGLClass, WebGLMain }
