@@ -61,7 +61,7 @@ export default function App() {
         <Menu
           value={state.menu}
           width={state.menu.show ? env.MENU_WIDTH : 0}
-          resize={resize}
+          mobile={resize.sm}
           onClick={fx.changeMenu}
         />
 

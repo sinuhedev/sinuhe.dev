@@ -5,17 +5,17 @@ export default function Menu({
   className,
   value,
   width,
-  resize,
+  mobile,
   onClick = () => {}
 }) {
   return (
     <aside className={css('Menu ', className)}>
-      {resize.sm && width > 0 && (
-        <button type="button" className="lock" onClick={onClick} />
+      {mobile && width > 0 && (
+        <button type="button" className="lock-sm" onClick={onClick} />
       )}
 
       <section
-        className={css('flex flex-col h-full', { 'menu-sm': resize.sm })}
+        className={css('flex flex-col h-full menu-sm')}
         style={{ width }}
       >
         <ul className="ps-3 pt-3">
@@ -26,8 +26,8 @@ export default function Menu({
             >
               <Link
                 href={e.path}
-                className="block p-1 w-100"
-                onClick={() => resize.sm && onClick()}
+                className="block p-1"
+                onClick={() => mobile && onClick()}
               >
                 <I18n value={e.name} />
               </Link>
