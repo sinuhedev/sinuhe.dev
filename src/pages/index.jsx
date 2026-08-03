@@ -49,14 +49,12 @@ export default function App() {
     >
       <div className="flex flex-col h-full">
         <Header
-          className="shrink-0"
           style={{ height: env.HEADER_HEIGHT }}
           onClickMenu={fx.changeMenu}
         />
 
         <main className="flex-1 flex overflow-hidden">
           <Menu
-            className="shrink-0"
             value={state.menu}
             width={state.menu.show ? env.MENU_WIDTH : 0}
             mobile={isMobile()}
