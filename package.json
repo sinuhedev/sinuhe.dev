@@ -1,7 +1,7 @@
 {
   "name": "sinuhe.dev",
   "description": "sinuhe.dev",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "private": true,
   "scripts": {
