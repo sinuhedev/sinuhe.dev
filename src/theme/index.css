@@ -29,6 +29,12 @@
 }
 
 @layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
   body {
     background-color: var(--body-bg);
     color: var(--body-color);

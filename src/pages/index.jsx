@@ -8,7 +8,6 @@ import functions from './functions'
 
 export default function App() {
   const viewTransitionRef = useRef()
-  const resize = useResize(env.WINDOW_RESIZE)
   const qs = useQueryString()
   const Page = usePage({
     hash: qs.hash,
@@ -48,26 +47,27 @@ export default function App() {
         i18n
       }}
     >
-      <Header
-        style={{ height: env.HEADER_HEIGHT }}
-        onClickMenu={fx.changeMenu}
-      />
-
-      <main
-        className="flex"
-        style={{ height: resize.height - env.HEADER_HEIGHT }}
-      >
-        <Menu
-          value={state.menu}
-          width={state.menu.show ? env.MENU_WIDTH : 0}
-          mobile={isMobile()}
-          onClick={fx.changeMenu}
+      <div className="flex flex-col h-full">
+        <Header
+          className="shrink-0"
+          style={{ height: env.HEADER_HEIGHT }}
+          onClickMenu={fx.changeMenu}
         />
 
-        <div ref={viewTransitionRef} className="w-full overflow-auto p-2">
-          {Page && <Page qs={qs.queryString} resize={resize} />}
-        </div>
-      </main>
+        <main className="flex-1 flex overflow-hidden">
+          <Menu
+            className="shrink-0"
+            value={state.menu}
+            width={state.menu.show ? env.MENU_WIDTH : 0}
+            mobile={isMobile()}
+            onClick={fx.changeMenu}
+          />
+
+          <div ref={viewTransitionRef} className="flex-1 overflow-auto p-2">
+            {Page && <Page qs={qs.queryString} />}
+          </div>
+        </main>
+      </div>
 
       {state.loading && <Loading />}
       <Background />
