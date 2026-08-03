@@ -1,8 +1,14 @@
+const getMenu = () => {
+  const val = window.localStorage.getItem('menu')
+  if (val === undefined || val === 'true') return true
+  return false
+}
+
 const initialState = {
   i18n: window.localStorage.getItem('i18n'),
   loading: true,
   menu: {
-    show: true,
+    show: getMenu(),
     itemActive: 0,
     items: [
       { path: '#/about', name: 'menu.pages.aboutMe' },
@@ -21,7 +27,14 @@ function changeI18n({ payload, put }) {
   window.localStorage.setItem('i18n', val)
 }
 
+function changeMenu({ state, put }) {
+  const val = !state.menu.show
+  put({ 'menu.show': val })
+  window.localStorage.setItem('menu', val)
+}
+
 export default {
   initialState,
-  changeI18n
+  changeI18n,
+  changeMenu
 }

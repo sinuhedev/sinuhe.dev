@@ -25,19 +25,12 @@ export default function App() {
     }
   })
 
-  const pages = useFx(functions, (initialState) => {
-    initialState.menu.show = !resize.sm
-    return initialState
-  })
+  const pages = useFx(functions)
   const { state, fx } = pages
 
   useEffect(() => {
     fx.hide('loading')
   }, [])
-
-  useEffect(() => {
-    fx.put({ 'menu.show': !resize.sm })
-  }, [resize.sm])
 
   useEffect(() => {
     const hash = ['', '#/'].includes(qs.hash) ? env.HOME_PAGE : qs.hash
@@ -58,7 +51,7 @@ export default function App() {
     >
       <Header
         style={{ height: env.HEADER_HEIGHT }}
-        onClickMenu={() => fx.put({ 'menu.show': !state.menu.show })}
+        onClickMenu={fx.changeMenu}
       />
 
       <main
@@ -69,7 +62,7 @@ export default function App() {
           value={state.menu}
           width={state.menu.show ? env.MENU_WIDTH : 0}
           resize={resize}
-          onClick={() => fx.hide('menu.show')}
+          onClick={fx.changeMenu}
         />
 
         <div ref={viewTransitionRef} className="w-full overflow-auto p-2">
