@@ -3,7 +3,7 @@ import { Link } from 'nextia'
 
 export default function ProjectsPage() {
   return (
-    <section className="h-3/4 flex flex-wrap items-center justify-around">
+    <section className="min-h-3/4 flex flex-wrap items-center justify-around">
       <article className="text-center">
         <Link href="https://portalx.dev" target="_blank" rel="noreferrer">
           <PortalText value="Portal X." />

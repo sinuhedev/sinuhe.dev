@@ -9,7 +9,7 @@ import { Card } from 'components'
 
 export default function CardsPage() {
   return (
-    <section className="h-full flex flex-col justify-center">
+    <section className="min-h-full flex flex-col justify-center">
       <div className="flex flex-wrap justify-center gap-30">
         <Card
           href="https://github.com/sinuhedev"
