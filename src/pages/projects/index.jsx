@@ -10,11 +10,11 @@ export default function ProjectsPage() {
         </Link>
       </article>
 
-      {/* <article className="text-center">
+      <article className="text-center">
         <Link href="https://portalfx.dev" target="_blank" rel="noreferrer">
           <Glitch value="Portal FX." />
         </Link>
-      </article> */}
+      </article>
     </section>
   )
 }
