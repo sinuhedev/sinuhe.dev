@@ -115,28 +115,34 @@
     text-shadow: 0 0 5px #8d8d93;
   }
 
-  35% {
-    opacity: 0.4;
-    text-shadow: 0 0 4px #8d8d93;
-  }
-
   36% {
+    transform: translate(0);
     opacity: 0.8;
     text-shadow: 0 0 8px #8d8d93;
   }
 
-  37%,
-  66% {
+  37% {
+    transform: translate(0);
     opacity: 1;
     text-shadow: 0 0 10px #8d8d93;
   }
 
   40% {
+    transform: translate(0);
     opacity: 0.2;
     text-shadow: 0 0 2px #8d8d93;
   }
 
-  60%,
+  50% {
+    transform: translate(0);
+    opacity: 1;
+    text-shadow: 0 0 10px #8d8d93;
+  }
+
+  65% {
+    transform: translate(calc(-100% - var(--text-padding)));
+  }
+
   100% {
     transform: translate(calc(-100% - var(--text-padding)));
   }

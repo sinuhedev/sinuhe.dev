@@ -68,7 +68,7 @@ export default function App() {
       </div>
 
       {state.loading && <Loading />}
-      <Background />
+      {/* <Background /> */}
     </Pagex>
   )
 }
