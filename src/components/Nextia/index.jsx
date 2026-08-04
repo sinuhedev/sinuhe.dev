@@ -11,18 +11,17 @@ export default function Nextia({ className, style }) {
         className="nextia-svg h-50 md:h-95"
       />
 
-      <div className="text-center mt-3 ">
-        <div>
-          <Link
-            href="https://nextia.dev"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center gap-2"
-          >
-            <h2>Nextia.</h2>
-            <Icon id="external-link" width="14" strokeWidth="6" />
-          </Link>
-        </div>
+      <div className="flex flex-col items-center mt-3 ">
+        <Link
+          href="https://nextia.dev"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2"
+        >
+          <h2>Nextia.</h2>
+          <Icon id="external-link" width="14" strokeWidth="6" />
+        </Link>
+
         <h5>
           <I18n value="projects.nextia" />
         </h5>
