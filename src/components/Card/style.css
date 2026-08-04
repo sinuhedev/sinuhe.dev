@@ -1,5 +1,8 @@
 .Card {
+  --anim-top: 80px;
+
   .card {
+    margin-top: var(--anim-top);
     height: 250px;
     position: relative;
     display: flex;
@@ -42,6 +45,6 @@
 @keyframes character-anim {
   to {
     opacity: 1;
-    transform: translate3d(0, -80px, 0);
+    transform: translate3d(0, calc(-1 * var(--anim-top)), 0);
   }
 }
