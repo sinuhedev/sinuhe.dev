@@ -1,9 +1,9 @@
 import i18n from 'assets/i18n.json'
 import icons from 'assets/icons.svg?raw'
 import { Background, Header, Loading, Menu } from 'components'
-import { Pagex, useFx, usePage, useQueryString, useResize } from 'nextia'
+import { Pagex, useFx, usePage, useQueryString } from 'nextia'
 import { useEffect, useRef } from 'react'
-import { env, isMobile } from 'utils'
+import { env } from 'utils'
 import functions from './functions'
 
 export default function App() {
@@ -57,7 +57,6 @@ export default function App() {
           <Menu
             value={state.menu}
             width={state.menu.show ? env.MENU_WIDTH : 0}
-            mobile={isMobile()}
             onClick={fx.changeMenu}
           />
 

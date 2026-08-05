@@ -1,16 +1,11 @@
 import { css, I18n, Link } from 'nextia'
+import { isMobile } from 'utils'
 import './style.css'
 
-export default function Menu({
-  className,
-  value,
-  width,
-  mobile,
-  onClick = () => {}
-}) {
+export default function Menu({ className, value, width, onClick = () => {} }) {
   return (
     <aside className={css('Menu ', className)}>
-      {mobile && width > 0 && (
+      {isMobile() && width > 0 && (
         <button type="button" className="lock-sm" onClick={onClick} />
       )}
 
@@ -27,7 +22,7 @@ export default function Menu({
               <Link
                 href={e.path}
                 className="block p-1"
-                onClick={() => mobile && onClick()}
+                onClick={() => isMobile() && onClick()}
               >
                 <I18n value={e.name} />
               </Link>

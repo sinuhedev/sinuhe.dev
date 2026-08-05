@@ -15,7 +15,7 @@
     "tailwindcss": "4.3.3"
   },
   "dependencies": {
-    "nextia": "10.0.3",
+    "nextia": "10.1.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "three": "0.185.1"
