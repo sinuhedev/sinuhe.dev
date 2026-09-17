@@ -6,14 +6,12 @@ import osImg from 'assets/img/holography/os.webp'
 import webImg from 'assets/img/holography/web.webp'
 import { Button, Holography } from 'components'
 import { useFx } from 'nextia'
-import functions from './functions'
 // import { Suspense, useEffect } from 'react'
 // import {  Loading } from 'components'
 
 export default function SkillsPage() {
-  const { state, fx } = useFx(functions, (initialState) => {
-    initialState.img = osImg
-    return initialState
+  const { state, fx } = useFx({
+    img: osImg
   })
 
   return (

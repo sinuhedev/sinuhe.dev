@@ -1,14 +1,35 @@
 import i18n from 'assets/i18n.json'
 import icons from 'assets/icons.svg?raw'
 import { Background, Header, Loading, Menu } from 'components'
-import { Pagex, useFx, usePage, useQueryString } from 'nextia'
+import { Pagex, useFx, usePage } from 'nextia'
 import { useEffect, useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions'
 
 export default function App() {
+  const pages = useFx(
+    {
+      i18n: window.localStorage.getItem('i18n'),
+      loading: true,
+      menu: {
+        show: localStorage.getItem('menu') !== 'false',
+        itemActive: 0,
+        items: [
+          { path: '#/about', name: 'menu.pages.aboutMe' },
+          { path: '#/experience', name: 'menu.pages.experience' },
+          { path: '#/skills', name: 'menu.pages.skills' },
+          { path: '#/cards', name: 'menu.pages.freelance' },
+          { path: '#/projects', name: 'menu.pages.projects' },
+          { path: '#/open-source', name: 'menu.pages.openSource' }
+        ]
+      }
+    },
+    functions
+  )
+
+  const { state, fx, qs } = pages
+
   const viewTransitionRef = useRef()
-  const qs = useQueryString()
   const Page = usePage({
     hash: qs.hash,
     homePage: env.HOME_PAGE,
@@ -23,9 +44,6 @@ export default function App() {
       name: env.VIEW_TRANSITION_NAME
     }
   })
-
-  const pages = useFx(functions)
-  const { state, fx } = pages
 
   useEffect(() => {
     fx.hide('loading')
@@ -61,7 +79,7 @@ export default function App() {
           />
 
           <div ref={viewTransitionRef} className="flex-1 overflow-auto p-2">
-            {Page && <Page qs={qs.queryString} />}
+            {Page && <Page />}
           </div>
         </main>
       </div>
