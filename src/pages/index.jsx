@@ -1,10 +1,12 @@
 import i18n from 'assets/i18n.json'
 import icons from 'assets/icons.svg?raw'
-import { Background, Header, Loading, Menu } from 'components'
-import { Pagex, useFx, usePage } from 'nextia'
+import { Background, Header, Loading, Menu, Translate } from 'components'
+import { Pagex, useFx, usePage, useQueryString } from 'nextia'
 import { useEffect, useRef } from 'react'
 import { env } from 'utils'
 import functions from './functions'
+
+const PAGES = import.meta.glob('./**/index.jsx')
 
 export default function App() {
   const pages = useFx(
@@ -27,17 +29,18 @@ export default function App() {
     functions
   )
 
-  const { state, fx, qs } = pages
-
+  const { state, fx } = pages
+  const qs = useQueryString()
   const viewTransitionRef = useRef()
   const Page = usePage({
     hash: qs.hash,
     homePage: env.HOME_PAGE,
-    importPage: async (path) => {
-      if (path === undefined) return await import(`./not-found.jsx`)
-      if (path.length === 1) return await import(`./${path[0]}/index.jsx`)
-      if (path.length === 2)
-        return await import(`./${path[0]}/${path[1]}/index.jsx`)
+    importPage: (path) => {
+      const key = `./${path.join('/')}/index.jsx`
+      const currentPage = PAGES[key]
+
+      if (!currentPage) return import('./not-found.jsx')
+      return currentPage()
     },
     viewTransition: {
       ref: viewTransitionRef,
@@ -69,7 +72,13 @@ export default function App() {
         <Header
           style={{ height: env.HEADER_HEIGHT }}
           onClickMenu={fx.changeMenu}
-        />
+        >
+          <Translate
+            value={state.i18n}
+            onChange={fx.changeI18n}
+            locales={i18n.locales}
+          />
+        </Header>
 
         <main className="flex-1 flex overflow-hidden">
           <Menu
@@ -79,7 +88,7 @@ export default function App() {
           />
 
           <div ref={viewTransitionRef} className="flex-1 overflow-auto p-2">
-            {Page && <Page />}
+            {Page && <Page context={pages} qs={qs} />}
           </div>
         </main>
       </div>

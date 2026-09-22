@@ -1,9 +1,14 @@
 import './style.css'
-import { Button, Translate } from 'components'
+import { Button } from 'components'
 import { css, Icon, Link } from 'nextia'
 import { fullscreen } from 'utils'
 
-export default function Header({ className, style, onClickMenu = () => {} }) {
+export default function Header({
+  children,
+  className,
+  style,
+  onClickMenu = () => {}
+}) {
   return (
     <header
       className={css(
@@ -29,7 +34,7 @@ export default function Header({ className, style, onClickMenu = () => {} }) {
         </Link>
       </div>
 
-      <Translate />
+      {children}
     </header>
   )
 }
