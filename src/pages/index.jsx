@@ -7,6 +7,7 @@ import { env } from 'utils'
 import functions from './functions'
 
 const PAGES = import.meta.glob('./**/index.jsx')
+const IS_MENU = localStorage.getItem('menu')
 
 export default function App() {
   const pages = useFx(
@@ -14,7 +15,7 @@ export default function App() {
       i18n: window.localStorage.getItem('i18n'),
       loading: true,
       menu: {
-        show: localStorage.getItem('menu') !== 'false',
+        show: IS_MENU && IS_MENU !== 'false',
         itemActive: 0,
         items: [
           { path: '#/about', name: 'menu.pages.aboutMe' },
