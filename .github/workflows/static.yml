@@ -1,9 +1,7 @@
-name: Deploy Vite Site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    # branches:
-    # - main
     tags:
       - "v*"
 
@@ -25,19 +23,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 24
-          cache: npm
+          bun-version: "1.4.2"
 
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Build
         env:
           PUBLIC_TITLE: ${{ vars.PUBLIC_TITLE }}
-        run: npm run build prod
+        run: bun run build:prod
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
