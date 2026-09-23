@@ -1,6 +1,5 @@
 /* @import "./icons/_index.css"; */
 @import "./fonts.css";
-@import "./utils.css";
 @import "./scrollbar.css";
 @import "./view-transition.css";
 
@@ -8,7 +7,7 @@
  * theme
  */
 
-@layer theme, base, components, utils;
+@layer theme, base, utils;
 
 @layer theme {
   :root {
@@ -117,5 +116,157 @@
   ul,
   menu {
     list-style: none;
+  }
+}
+
+@layer utils {
+  .absolute {
+    position: absolute;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+
+  .gap-7 {
+    gap: calc(var(--spacing) * 7);
+  }
+
+  .gap-30 {
+    gap: calc(var(--spacing) * 30);
+  }
+
+  .h-3\/4 {
+    height: 75%;
+  }
+
+  .h-50 {
+    height: calc(var(--spacing) * 50);
+  }
+
+  .h-full {
+    height: 100%;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-around {
+    justify-content: space-around;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .mute-version {
+    color: color-mix(in srgb, var(--muted-color), transparent 20%);
+  }
+
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+
+  .min-h-3\/4 {
+    min-height: 75%;
+  }
+
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
+  }
+
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
+
+  .overflow-auto {
+    overflow: auto;
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .p-1 {
+    padding: var(--spacing);
+  }
+
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+
+  .pe-2 {
+    padding-inline-end: calc(var(--spacing) * 2);
+  }
+
+  .ps-2 {
+    padding-inline-start: calc(var(--spacing) * 2);
+  }
+
+  .ps-3 {
+    padding-inline-start: calc(var(--spacing) * 3);
+  }
+
+  .ps-4 {
+    padding-inline-start: calc(var(--spacing) * 4);
+  }
+
+  .pt-3 {
+    padding-top: calc(var(--spacing) * 3);
+  }
+
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .w-48 {
+    width: calc(var(--spacing) * 48);
+  }
+
+  .z-101 {
+    z-index: 101;
+  }
+
+  @media (min-width: 768px) {
+    .md\:h-95 {
+      height: calc(var(--spacing) * 95);
+    }
   }
 }

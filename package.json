@@ -5,13 +5,14 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite --mode dev",
-    "build": "vite build --mode"
+    "dev": "BUN_ENV=development bun web.js serve",
+    "build:dev": "BUN_ENV=development bun web.js build",
+    "build:prod": "BUN_ENV=production bun web.js build",
+    "test": "bun test",
+    "test:name": "bun test --test-name-pattern",
+    "test:coverage": "bun test --coverage"
   },
-  "devDependencies": {
-    "@vitejs/plugin-react": "6.1.1",
-    "vite": "8.3.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "nextia": "12.1.0",
     "react": "19.3.0",

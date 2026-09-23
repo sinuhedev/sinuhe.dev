@@ -1,12 +1,22 @@
 import i18n from 'assets/i18n.json'
-import icons from 'assets/icons.svg?raw'
+import icons from 'assets/icons.svg' with { type: 'text' }
 import { Background, Header, Loading, Menu, Translate } from 'components'
 import { Pagex, useFx, usePage, useQueryString } from 'nextia'
 import { useEffect, useRef } from 'react'
 import { env, getMenu } from 'utils'
 import functions from './functions'
 
-const PAGES = import.meta.glob('./**/index.jsx')
+const PAGES = {
+  about: () => import('./about/index.jsx'),
+  cards: () => import('./cards/index.jsx'),
+  'cube-3d': () => import('./cube-3d/index.jsx'),
+  experience: () => import('./experience/index.jsx'),
+  'open-source': () => import('./open-source/index.jsx'),
+  projects: () => import('./projects/index.jsx'),
+  skills: () => import('./skills/index.jsx'),
+  //
+  notFound: () => import(`./not-found.jsx`)
+}
 
 export default function App() {
   const pages = useFx(
@@ -36,10 +46,7 @@ export default function App() {
     hash: qs.hash,
     homePage: env.HOME_PAGE,
     importPage: (path) => {
-      const key = `./${path.join('/')}/index.jsx`
-      const currentPage = PAGES[key]
-
-      if (!currentPage) return import('./not-found.jsx')
+      const currentPage = PAGES[path.join('/')] ?? PAGES.notFound
       return currentPage()
     },
     viewTransition: {

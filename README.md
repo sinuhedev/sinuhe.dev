@@ -5,8 +5,11 @@
 Open http://localhost:3000 to view it in the browser.
 
 ```sh
-npm i
-node --run dev
+bun install
+bun dev
+bun test
+bun run build:dev
+bun run build:prod
 ```
 
 ## env
@@ -16,10 +19,9 @@ node --run dev
 .env.[mode] # only loaded in specified mode [ dev, test, beta, prod ]
 ```
 
- * .env.dev
+ * .env.development
+ * .env.production
  * .env.test
- * .env.beta
- * .env.main
  
 ```.env.[mode]
 
