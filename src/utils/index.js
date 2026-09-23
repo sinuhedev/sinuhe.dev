@@ -20,11 +20,17 @@ function fullscreen(element = document.documentElement) {
 }
 
 function isMobile() {
-  const value = getComputedStyle(document.documentElement)
+  const value = window
+    .getComputedStyle(document.documentElement)
     .getPropertyValue('--breakpoint-md')
     .trim()
 
   return window.matchMedia(`(max-width: ${value})`).matches
 }
 
-export { env, fullscreen, isMobile, WebGLClass, WebGLMain }
+function getMenu() {
+  if (isMobile()) return false
+  return (window.localStorage.getItem('menu') ?? true) !== 'false'
+}
+
+export { env, fullscreen, getMenu, isMobile, WebGLClass, WebGLMain }

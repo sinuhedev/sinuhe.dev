@@ -3,11 +3,10 @@ import icons from 'assets/icons.svg?raw'
 import { Background, Header, Loading, Menu, Translate } from 'components'
 import { Pagex, useFx, usePage, useQueryString } from 'nextia'
 import { useEffect, useRef } from 'react'
-import { env } from 'utils'
+import { env, getMenu } from 'utils'
 import functions from './functions'
 
 const PAGES = import.meta.glob('./**/index.jsx')
-const IS_MENU = window.localStorage.getItem('menu')
 
 export default function App() {
   const pages = useFx(
@@ -15,7 +14,7 @@ export default function App() {
       i18n: window.localStorage.getItem('i18n') ?? i18n.defaultLocale,
       loading: true,
       menu: {
-        show: IS_MENU && IS_MENU !== 'false',
+        show: getMenu(),
         itemActive: 0,
         items: [
           { path: '#/about', name: 'menu.pages.aboutMe' },
