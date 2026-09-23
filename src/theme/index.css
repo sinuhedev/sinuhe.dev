@@ -20,10 +20,10 @@
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1280px;
 
-    --text-lg: 1.125rem;
-    --text-xl: 1.25rem;
-    --text-2xl: 1.5rem;
-    --text-3xl: 1.875rem;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+    --text-3xl: 30px;
 
     --primary: #17344b;
     --body-bg: black;
@@ -72,10 +72,6 @@
     border-radius: 0;
   }
 
-  h1 {
-    font-size: var(--text-3xl);
-  }
-
   h1,
   h2,
   h3,
@@ -84,6 +80,10 @@
   h6 {
     font-size: inherit;
     font-weight: inherit;
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
   }
 
   h2 {
