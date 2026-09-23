@@ -7,12 +7,12 @@ import { env } from 'utils'
 import functions from './functions'
 
 const PAGES = import.meta.glob('./**/index.jsx')
-const IS_MENU = localStorage.getItem('menu')
+const IS_MENU = window.localStorage.getItem('menu')
 
 export default function App() {
   const pages = useFx(
     {
-      i18n: window.localStorage.getItem('i18n'),
+      i18n: window.localStorage.getItem('i18n') ?? i18n.defaultLocale,
       loading: true,
       menu: {
         show: IS_MENU && IS_MENU !== 'false',
