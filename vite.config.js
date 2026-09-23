@@ -1,6 +1,5 @@
 import { execSync } from 'node:child_process'
 import { readFile, unlink } from 'node:fs/promises'
-import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import pkg from './package.json' with { type: 'json' }
@@ -36,7 +35,6 @@ export default defineConfig(({ mode }) => {
       // si son imagenes pequeñas no usar base64
       assetsInlineLimit: 0,
       chunkSizeWarningLimit: 700,
-
       rollupOptions: {
         output: {
           manualChunks(id) {
@@ -60,7 +58,6 @@ export default defineConfig(({ mode }) => {
 
     plugins: [
       react(),
-      tailwindcss(),
       {
         name: 'html',
         transformIndexHtml(html) {
