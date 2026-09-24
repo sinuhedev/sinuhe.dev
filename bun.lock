@@ -5,7 +5,7 @@
     "": {
       "name": "sinuhe.dev",
       "dependencies": {
-        "nextia": "12.2.0",
+        "nextia": "12.3.0",
         "react": "19.3.0",
         "react-dom": "19.3.0",
         "three": "0.186.0",
@@ -13,7 +13,7 @@
     },
   },
   "packages": {
-    "nextia": ["nextia@12.2.0", "", { "peerDependencies": { "react": "^19.0.0" } }, "sha512-vHftf9VPkGL/ijaEEwC367zR5D1YbaK35C3e+1CNd4oBZklRPPnb9L9ojpD69J5NBXQhzS5UTZDqaNzY14lqTg=="],
+    "nextia": ["nextia@12.3.0", "", { "peerDependencies": { "react": "^19.0.0" } }, "sha512-8LNsKxI9cJvoXmme0nTc4qBbZfoW15aVMTRSiTLP/aI95a+C2L6cO0m9FAQMomzc1KhbFI+y5mQAdtPKEEYBRQ=="],
 
     "react": ["react@19.3.0", "", {}, "sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog=="],
 
