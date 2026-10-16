@@ -1,7 +1,7 @@
 import i18n from 'assets/i18n.json'
 import icons from 'assets/icons.svg' with { type: 'text' }
 import { Background, Header, Loading, Menu, Translate } from 'components'
-import { Pagex, useFx, usePage, useQueryString } from 'nextia'
+import { Pagex, useFx, usePage } from 'nextia'
 import { useEffect, useRef } from 'react'
 import { env, getMenu } from 'utils'
 import functions from './functions'
@@ -39,8 +39,7 @@ export default function App() {
     functions
   )
 
-  const qs = useQueryString()
-  const { state, fx } = pages
+  const { state, qs, fx } = pages
   const viewTransitionRef = useRef()
 
   const Page = usePage({
