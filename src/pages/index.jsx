@@ -8,17 +8,17 @@ import functions from './functions'
 
 const PAGES = {
   about: () => import('./about/index.jsx'),
-  cards: () => import('./cards/index.jsx'),
-  'cube-3d': () => import('./cube-3d/index.jsx'),
   experience: () => import('./experience/index.jsx'),
-  'open-source': () => import('./open-source/index.jsx'),
-  projects: () => import('./projects/index.jsx'),
   skills: () => import('./skills/index.jsx'),
+  cards: () => import('./cards/index.jsx'),
+  projects: () => import('./projects/index.jsx'),
   //
-  notFound: () => import(`./not-found.jsx`)
+  notFound: () => import(`./not-found.jsx`),
+  //
+  'cube-3d': () => import('./cube-3d/index.jsx')
 }
 
-export default function App() {
+export default function Pages() {
   const pages = useFx(
     {
       i18n: window.localStorage.getItem('i18n') ?? i18n.defaultLocale,
@@ -31,8 +31,7 @@ export default function App() {
           { path: '#/experience', name: 'menu.pages.experience' },
           { path: '#/skills', name: 'menu.pages.skills' },
           { path: '#/cards', name: 'menu.pages.freelance' },
-          { path: '#/projects', name: 'menu.pages.projects' },
-          { path: '#/open-source', name: 'menu.pages.openSource' }
+          { path: '#/projects', name: 'menu.pages.projects' }
         ]
       }
     },

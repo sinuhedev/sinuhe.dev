@@ -5,7 +5,6 @@ import Glitch from './Glitch'
 import Header from './Header'
 import Holography from './Holography'
 import Menu from './Menu'
-import Nextia from './Nextia'
 import PortalText from './PortalText'
 import TimeLine from './TimeLine'
 // ui
@@ -24,7 +23,6 @@ export {
   Holography,
   Loading,
   Menu,
-  Nextia,
   PortalText,
   Select,
   TimeLine,
