@@ -64,9 +64,9 @@ export default function Pages() {
   return (
     <Pagex
       value={{
-        context: pages,
-        icons,
-        i18n
+        i18nLocale: state.i18n,
+        i18n,
+        icons
       }}
     >
       <div className="flex flex-col h-full">
